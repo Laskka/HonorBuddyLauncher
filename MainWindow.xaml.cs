@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Diagnostics;
+using System.Windows.Input;
 using System.Windows.Navigation;
 
 
@@ -32,7 +33,7 @@ namespace HonorBuddyLauncher
                         break;
                     case "3":
                         MessageBoxResult mbr = MessageBox.Show(
-                            "Скопировать этот текст:\n 127.0.0.1 auth3.buddyauth.com \n 127.0.0.1 auth2.buddyauth.com \n 127.0.0.1 www.buddyauth.com",
+                            "Copy this text?:\n 127.0.0.1 auth3.buddyauth.com \n 127.0.0.1 auth2.buddyauth.com \n 127.0.0.1 www.buddyauth.com",
                             "Hosts File", MessageBoxButton.YesNo,MessageBoxImage.Question,MessageBoxResult.OK);
                         
                         if (mbr == MessageBoxResult.Yes)
@@ -61,6 +62,11 @@ namespace HonorBuddyLauncher
         {
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
             e.Handled = true;
+        }
+
+        private void UIElement_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
     }
 }

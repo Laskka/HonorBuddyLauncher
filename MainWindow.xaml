@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:HonorBuddyLauncher"
         mc:Ignorable="d"
         Title="HonorBuddyLauncher" Height="600" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Background="#00000000" Foreground="Black">
-    <Grid>
+    <Grid MouseLeftButtonDown="UIElement_OnMouseLeftButtonDown">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                 <GradientStop Color="#FF8836BF" Offset="0.001"/>
